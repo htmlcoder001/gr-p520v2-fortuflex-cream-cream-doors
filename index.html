@@ -13,7 +13,146 @@
     <link href="css/css.css" rel="stylesheet">
     <link rel="stylesheet" href="css/settings.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="css/bagscss.css" rel="stylesheet">
+    <link href="css/matreshka.css" rel="stylesheet">
+    <link href="css/doors.css" rel="stylesheet">
+    <style>
+        .pop-up-layer {
+            position: fixed !important;
+            top: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: rgba(0, 0, 0, .7) !important;
+            z-index: 99 !important
+        }
+    
+        .pop-up-layer-show {
+            display: block
+        }
+    
+        .pop-up-window {
+            position: relative;
+            max-width: 400px;
+            right: 0;
+            left: 0;
+            top: 40%;
+            margin: 0 auto;
+            background: #fff none repeat scroll 0% 0%;
+            text-align: center;
+            padding: 10px;
+            padding-top: 70px;
+            padding-bottom: 20px;
+            border-radius: 10px;
+            animation: .7s ease 0s normal none 1 running pop-up-appear
+        }
+    
+        .pop-up-window::before {
+            content: "";
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            top: -55px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            background-color: #71c341;
+            border-radius: 50%;
+            animation: .5s ease .6s normal backwards 1 running pop-up-appear-before
+        }
+    
+        .pop-up-window::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 20px;
+            top: -20px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            border-width: medium medium 4px 4px;
+            border-style: none none solid solid;
+            border-color: currentcolor currentcolor #fff #fff;
+            -moz-border-top-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            border-image: none;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            transition: opacity 1s ease 0s;
+            animation: .5s ease .6s normal backwards 1 running pop-up-appear-after
+        }
+        .spin-result-wrapper {
+            display: none;
+            padding: 0 10px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+            left: 0;
+            height: 100%;
+            position: fixed;
+            background-color: rgba(0, 0, 0, .6);
+            text-align: center
+        }
 
+        .pop-up-window {
+            position: relative;
+            max-width: 400px;
+            right: 0;
+            left: 0;
+            top: 40%;
+            margin: 0 auto;
+            background: #fff none repeat scroll 0% 0%;
+            text-align: center;
+            padding: 10px;
+            padding-top: 70px;
+            padding-bottom: 20px;
+            border-radius: 10px;
+            animation: .7s ease 0s normal none 1 running pop-up-appear
+        }
+
+        .close-popup {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url(../fonts/cross.svg);
+            background-size: 100%;
+            top: -40px;
+            border-radius: 50%;
+            -webkit-box-shadow: 0 0 10px #fff;
+            box-shadow: 0 0 10px #fff;
+            right: 0;
+            cursor: pointer
+        }
+
+        .pop-up-heading {
+            font-size: 40px;
+            margin-bottom: 20px
+        }
+
+        .pop-up-text {
+            margin-bottom: 25px;
+            font-size: 24px;
+            line-height: 30px;
+            text-align: center !important
+        }
+
+        .pop-up-button {
+            text-transform: uppercase;
+            text-decoration: none !important;
+            padding: 10px 20%;
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #71c341;
+            color: #fff !important;
+            border: medium none;
+            cursor: pointer;
+            outline: medium none
+        }
+    </style>
 </head>
 <body>
     <!-- HEADER -->
@@ -529,7 +668,7 @@
                         <p><strong>Δρ. Harvey Smyers:</strong> Όχι μόνο τον Jordi, αλλά και χιλιάδες απλούς ανθρώπους. Μιλάω για το προϊόν Fortuflex. Αναπτύχθηκε από το Ευρωπαϊκό Ινστιτούτο Ρευματολογίας. Μια πραγματικά μοναδική και, θα έλεγα, επαναστατική εφεύρεση των επιστημόνων μας. Είναι μια κρέμα με φυσικά συστατικά, που είναι σε θέση να αποκαταστήσει την άρθρωση σε κυτταρικό επίπεδο. Με ολοκληρωμένη θεραπεία φυσικά.</p>
                         <p>Η κρέμα Fortuflex περιέχει ένα μεγάλο σύμπλεγμα φυτικών εκχυλισμάτων και βιοδραστικών συστατικών με εξαιρετικά ενεργή μοριακή δομή.</p>
                         <p><strong>Δεν θα τα απαριθμήσω όλα, θα μιλήσω για τα κύρια συστατικά:</strong></p>
-                        <p style="text-align: center"><a href="#form"><img src="images/prod.png" style="max-width: 600px;"></a></p>
+                        <p style="text-align: center"><a href="#form"><img src="images/prod1.png" style="max-width: 600px;"></a></p>
                         <ul>
                             <li>- Το εκχύλισμα φύλλων φαρμακευτικού σύμφυτου (comfrey) καταστέλλει τη φλεγμονή και αναισθητοποιεί.</li>
                             <li>- Το έλαιο ευκαλύπτου εσπεριδοειδών αποκαθιστά την κυκλοφορία του αίματος στην άρθρωση.</li>
@@ -601,61 +740,108 @@
                         
                         
                         <!--Form-->
-                        <link rel="stylesheet" href="form/form.css">
-                        <div id="form">
-        
-                            <div id="form_image">
-                                <div class="form_image_wrap_image">
-                                    <img src="images/prod.png" alt="">
+                        <div id="to_form"></div>
+                        <center class="red_roulete">
+                            <div class="door__wrapper" id="roulette_start">
+                                <h2 class="door__title" style="color: #fff !important;">ΔΙΑΛΕΞΤΕ ΠΟΡΤΑ</h2>
+                                <div class="door__container">
+                                    <div class="box">
+                                        <div class="hi">
+                                            <p id="door__sales2" class="door__sales "></p>
+                                        </div>
+                                        <div id="door__2" class="door">
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="hi">
+                                            <p id="door__sales1" class="door__sales "></p>
+                                        </div>
+                                        <div id="door__1" class="door">
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="hi">
+                                            <p id="door__sales3" class="door__sales "></p>
+                                        </div>
+                                        <div id="door__3" class="door">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-        
-        
-                            <div class="form_wrap" id="objectScrollAttention">
-                                <form method="POST" geo="gr" action="api.php" onsubmit="return validate_form(this, 'Πληκτρολογηστε τον σωστο αριθμο τηλεφωνου');">
-                                    <label class="descount">1+1 με μόνο 45€</label>
+                            <div id="form">
+                                <div class="order_block">
                 
-                                    <!--<div id="price">
-                                      <div class="price_new">
-                                        39 €
-                                      </div>
-                                      <div class="price_old">
-                                        78 €
-                                      </div>
-                                    </div>-->
                 
-                                    <center><label class="inp_name">Ονοματεπώνυμο</label></center>
-                                    <input name="name" placeholder="" required="" type="text">
+                                    <h3>ΤΟ ΜΟΝΟ ΠΟΥ ΧΡΕΙΑΖΕΤΑΙ ΕΙΝΑΙ ΝΑ ΕΙΣΑΓΕΤΕ ΤΟ ΟΝΟΜΑ ΚΑΙ ΤΟΝ ΑΡΙΘΜΟ ΤΟΥ ΤΗΛΕΦΩΝΟΥ ΣΑΣ.<br><!--<span class="time_remains" id="min" style="color: red;">10</span> :
+              <span class="time_remains" id="sec" style="color: red;">00</span>-->
+                                    </h3>
+                                    <div id="form_image" style="margin-bottom: -80px">
+                                        <div class="form_image_wrap_image">
+                                            <img src="images/prod.png" alt="">
+                                        </div>
+                                    </div>
                 
-                                    <center><label class="inp_phone">Τηλέφωνο (ενεργό κινητό)
-                                    </label></center>
-                                    <input name="phone" placeholder="" required="" type="tel" id="phone">
                 
-                                    <input name="subid" type="hidden" value="{subid}">
-                                    <input name="px" type="hidden" value="{px}">
-                                    <input name="bayer" type="hidden" value="{bayer}">
-                                    <br>
-                                    <button type="submit" class="btnn">ΠΑΡΑΓΓΕΛΙΑ</button>
-            
-                                </form>
+                                    <div class="form_wrap" id="objectScrollAttention">
+                                        <form method="post" geo="es" action="api.php" onsubmit="return validate_form(this, 'Por favor ingrese un número de teléfono válido');">
+                        
+                                            <input name="subid" type="hidden" value="{subid}">
+                                            <input name="px" type="hidden" value="{px}">
+                                            <input name="bayer" type="hidden" value="{bayer}">
+                        
+                                            <label class="discount">1+1 με μόνο 45€</label>
+                                            <label class="timeleft">υπολειπόμενος χρόνος</label>
+                                            <label class="timer">00 <span class="free">: </span><span id="min">10</span>
+                                                <span class="free">:</span> <span id="sec">00</span></label>
+                        
+                                            <label class="hours">ώρες λεπτά δευτερόλεπτα</label>
+                        
+                                            <!--<div id="price">
+                                              <div id="price-new"><b>45€</b></div>
+                                              <div id="price-old"><b>78€</b></div>
+                                            </div>-->
+                        
+                                            <label class="example">Για παράδειγμα  : <em>Λυδία</em></label>
+                                            <input name="name" type="text" placeholder="Όνομα" required="">
+                        
+                                            <label class="example">Για παράδειγμα : <em>+30 XXXXXXXXXX</em></label>
+                                            <input name="phone" type="tel" placeholder="Τηλέφωνο (ενεργό κινητό)" required="">
+                        
+                                            <button type="submit">ΠΑΡΑΓΓΕΙΛΕΤΕ</button>
+                        
+                                            <div id="protection">
+                                                <div class="protection-icon"></div>
+                                                <div><strong>Μην ανησυχείτε, οι courier αλλάζουν τακτικά τις μάσκες και τα γάντια. Ανέπαφη παράδοση και πληρωμή.</strong></div>
+                                            </div>
+                    
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
-    
-                        </div>
-		                    <br>
-                        <script>
-                            var intr,
-                              time = 1800;
-                            function start_timer() {
-                                intr = setInterval(tick, 1e3);
-                            }
-                            function tick() {
-                                time -= 1;
-                                var e = Math.floor(time / 60),
-                                  t = time - 60 * e;
-                                0 == e && 0 == t && clearInterval(intr), (t = t >= 10 ? t : "0" + t), $("#min").html(e), $("#sec").html(t);
-                            }
-                            start_timer();
-                        </script>
+                            <div class="spin-result-wrapper">
+                                <div class="pop-up-window">
+                                    <span class="pop-up-heading">Συγχαρητήρια!</span>
+                                    <p class="ruletka-p pop-up-text">Μπορείτε να αποκτήσετε 2 συσκευασίες Fortuflex στην τιμή του ενός προϊόντος!</p>
+                                    <a class="pop-up-button" href="#form">OK</a>
+                                </div>
+                            </div>
+                            <script>
+                                let discount1 = '20%'
+                                let discount2 = '30%'
+                                let discount3 = '1+1'
+                                document.querySelectorAll('.card__item__sale-30').forEach(disc => {
+                                    disc.innerText = discount1
+                                })
+                                document.querySelectorAll('.card__item__sale-50').forEach(disc => {
+                                    disc.innerText = discount2
+                                })
+                                document.querySelectorAll('.card__item__sale-100').forEach(disc => {
+                                    disc.innerText = discount3
+                                    // document.querySelector('.discountYouWinn').innerText = discount3
+                                })
+                            </script>
+                        </center>
+                        <br>
                         <!--Form END-->
 						
                     </div>
@@ -663,6 +849,11 @@
                     
     
                     <style>
+                        .vk-container-main {
+                            float: none;
+                            max-width: calc(100% - 60px);
+                            margin-left: 60px;
+                        }
                         .vk-container {
                             font-family: sans-serif!important;
                             font-size: 15px;
@@ -839,6 +1030,10 @@
                                 font-size: 21px;
                 
                             }
+                            .vk-container-main {
+                                max-width: 100%;
+                                margin-left: 0;
+                            }
                         }
                         @media (max-width: 475px) {
                             .down-menu {
@@ -850,7 +1045,7 @@
                         }
                     </style>
     
-                    <div class="vk-container" style="float: none; max-width: calc(100% - 60px); margin-left: 60px;">
+                    <div class="vk-container vk-container-main">
                         <div class="vk-header">
                             <div class="vk-logo"></div>
                             <div class="vk-header-text"><span class="comment-count">194 σχόλια σήμερα</span></div>
@@ -4545,6 +4740,6 @@ c0 29 2 30 46 30 41 0 45 2 42 23 -2 18 -10 23 -45 25 -35 3 -43 7 -43 22 0
 		});
 
 </script>
-
+    <script type="text/javascript" src="js/doors.js"></script>
     </body>
     </html>
